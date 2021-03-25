@@ -10,21 +10,19 @@ export function Home() {
 				value={tareas}
 				onChange={e => {
 					setTareas(e.target.value);
-					//console.log(e.target.value);
 				}}
 				onKeyPress={e => {
 					if (e.key == "Enter") {
-						//adicionar la tarea al array
 						setLista(lista.concat(tareas));
-						setTareas(""); //limpia el input
-						console.log(lista);
+						setTareas("");
 					}
 				}}
 			/>
-			{lista.map((item, index) => {
-				return <li key={index}>{item}</li>;
-			})}
+			<ul className="list-group">
+				{lista.map((item, index) => {
+					return <li key={index}>{item}</li>;
+				})}
+			</ul>
 		</div>
 	);
 }
-//cada vez que hago enter alimento el arreglo y hago map para mostrarlo
